@@ -1,0 +1,37 @@
+.home {
+  text-align: center;
+  padding: 20px;
+}
+
+.home__description {
+  margin-bottom: 40px;
+}
+
+.home__features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-gap: 20px;
+  justify-items: center;
+}
+
+.card {
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card__icon {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.card__title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.card__description {
+  font-size: 14px;
+  color: #777;
+}

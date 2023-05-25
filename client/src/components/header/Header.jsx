@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { FaBars, FaTimes } from 'react-icons/fa';
-import './Header.css';
+import './../../styles/Header.css';
 
 const Header = () => {
   const navRef = useRef();
