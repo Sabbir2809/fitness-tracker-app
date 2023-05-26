@@ -7,9 +7,6 @@ const Personalization = () => {
   const [workoutDuration, setWorkoutDuration] = useState('');
 
   useEffect(() => {
-    // Fetch exercise preferences from API or localStorage
-    // and update the state
-    // Example code for fetching from localStorage:
     const savedPreferences = localStorage.getItem('exercisePreferences');
     if (savedPreferences) {
       setExercisePreferences(JSON.parse(savedPreferences));
@@ -17,9 +14,6 @@ const Personalization = () => {
   }, []);
 
   useEffect(() => {
-    // Save exercise preferences to API or localStorage
-    // whenever the state changes
-    // Example code for saving to localStorage:
     localStorage.setItem('exercisePreferences', JSON.stringify(exercisePreferences));
   }, [exercisePreferences]);
 

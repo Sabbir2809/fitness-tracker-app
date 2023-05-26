@@ -1,23 +1,37 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './../../styles/Dashboard.css';
-import FitnessTracker from './FitnessTracker';
-import FitnessGoals from './FitnessGoals';
-import WorkoutHistory from './WorkoutHistory';
 
 const Dashboard = () => {
+  const [fitnessProgress, setFitnessProgress] = useState(0);
+  const [overallProgress, setOverallProgress] = useState(0);
+
+  useEffect(() => {
+    const savedFitnessProgress = localStorage.getItem('fitnessProgress');
+    if (savedFitnessProgress) {
+      setFitnessProgress(parseFloat(savedFitnessProgress));
+    }
+
+    const savedOverallProgress = localStorage.getItem('overallProgress');
+    if (savedOverallProgress) {
+      setOverallProgress(parseFloat(savedOverallProgress));
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('fitnessProgress', fitnessProgress.toString());
+    localStorage.setItem('overallProgress', overallProgress.toString());
+  }, [fitnessProgress, overallProgress]);
+
   return (
     <div className='dashboard'>
       <h2>Dashboard</h2>
-      <div className='dashboard-grid'>
-        <div className='card'>
-          <FitnessTracker />
-        </div>
-        <div className='card'>
-          <FitnessGoals />
-        </div>
-        <div className='card'>
-          <WorkoutHistory />
-        </div>
+      <div className='card'>
+        <h3>Fitness Progress</h3>
+        <p>{fitnessProgress.toFixed(2)}%</p>
+      </div>
+      <div className='card'>
+        <h3>Overall Progress</h3>
+        <p>{overallProgress.toFixed(2)}%</p>
       </div>
     </div>
   );
