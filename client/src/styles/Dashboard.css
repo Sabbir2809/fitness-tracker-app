@@ -1,0 +1,25 @@
+.dashboard {
+  padding: 20px;
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 20px;
+}
+
+.card {
+  background-color: #f8f8f8;
+  border-radius: 4px;
+  padding: 20px;
+}
+
+@media (max-width: 600px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+}

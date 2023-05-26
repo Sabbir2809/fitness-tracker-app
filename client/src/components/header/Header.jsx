@@ -12,7 +12,7 @@ const Header = () => {
 
   return (
     <header>
-      <h3>Logo</h3>
+      <h3>Fitness Tracker</h3>
       <nav ref={navRef}>
         <Link to='/'>Home</Link>
         <Link to='/fitness'>Fitness Tracking</Link>
